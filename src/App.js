@@ -1,11 +1,12 @@
 import React from "react";
-
+import './index.css';
+import PostsLists from "./components/PostsLists";
 
 function App() {
   return (
-    <>
-    Udemy course
-    </>
+    <main>
+      <PostsLists/>
+    </main>
   )
 }
 
