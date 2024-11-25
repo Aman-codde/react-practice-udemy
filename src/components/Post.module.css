@@ -2,6 +2,9 @@
     background-color: lightseagreen;
     margin: 2rem;
     padding: 1rem;
+    display: inline-block;
+    border-radius: 5px;
+    min-width: 20vw;
   }
 
   .title {

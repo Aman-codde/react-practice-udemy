@@ -23,3 +23,15 @@
     border-radius: 5px;
     color: black;
 }
+
+.btn {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    margin: 0 5px 10px 5px;
+    border-radius: 5px;
+}
+
+.cancelBtn {
+    background-color: rgb(195, 88, 88);
+}

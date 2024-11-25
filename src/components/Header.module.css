@@ -1,0 +1,18 @@
+.header{
+    overflow: hidden;
+    margin: 20px;
+    border-bottom: 2px solid;
+    padding-bottom: 10px;
+}
+
+.header a {
+    float: left;
+    font-size: 25px;
+}
+
+.addBtn {
+    float: right;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: lightseagreen;
+}

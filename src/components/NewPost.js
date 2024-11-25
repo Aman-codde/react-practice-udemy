@@ -1,8 +1,27 @@
+import { useState } from 'react';
 import classes from './NewPost.module.css';
 
 export default function NewPost(props){
+    const [eneteredAuthor, setEnteredAuthor] = useState('');
+    const [eneteredBody, setEnteredBody] = useState('');
+
+    function authorChangeHandler(event){
+        setEnteredAuthor(event.target.value);
+    }
+    function bodyChangeHandler(event){
+        setEnteredBody(event.target.value);
+    }
+    function submitHandler(event){
+        event.preventDefault();
+        const postData = {
+            author: eneteredAuthor,
+            body: eneteredBody
+        }
+        props.onAddPost(postData);
+        props.onCancel();
+    }
     return(
-        <form className={classes.form}>
+        <form className={classes.form} onSubmit={submitHandler}>
             <p className={classes.title}>Add New Task</p>
             <p>
                 <label htmlFor="name">Name</label>
@@ -10,7 +29,7 @@ export default function NewPost(props){
                     type="text"
                     id="name"
                     required
-                    onChange={props.onAuthorChange}
+                    onChange={authorChangeHandler}
                 />
             </p>            
            <p>
@@ -19,9 +38,11 @@ export default function NewPost(props){
                     id="body"
                     rows={3}
                     required
-                    onChange={props.onBodyChange}
+                    onChange={bodyChangeHandler}
                 />
-           </p>          
+           </p> 
+           <button className={classes.btn}>Submit</button>  
+           <button type='button' className={`${classes.btn} ${classes.cancelBtn}`} onClick={props.onCancel}>Cancel</button>       
         </form>
     )
 }
