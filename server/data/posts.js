@@ -6,4 +6,8 @@ async function getPosts(){
     return posts ? posts : [];
 }
 
-export {getPosts};
+function writePost(posts){
+    return fs.writeFile('posts.json',JSON.stringify(posts));
+}
+
+export {getPosts,writePost};
